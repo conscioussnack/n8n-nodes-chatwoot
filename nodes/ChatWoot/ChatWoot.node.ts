@@ -1,6 +1,10 @@
-import {INodeType, INodeTypeDescription} from 'n8n-workflow';
+import {AITool, INodeType, INodeTypeDescription} from 'n8n-workflow';
 import {N8NPropertiesBuilder, N8NPropertiesBuilderConfig} from '@devlikeapro/n8n-openapi-node';
 import * as doc from './openapi.json';
+import {AssignConversation} from './tools/assignConversation';
+import {AddTag} from './tools/addTag';
+import {SendSummary} from './tools/sendSummary';
+import {AddNote} from './tools/addNote';
 
 const config: N8NPropertiesBuilderConfig = {}
 const parser = new N8NPropertiesBuilder(doc, config);
@@ -35,4 +39,11 @@ export class ChatWoot implements INodeType {
         },
         properties: properties,
     };
+
+    tools: AITool[] = [
+        new AssignConversation(),
+        new AddTag(),
+        new SendSummary(),
+        new AddNote(),
+    ];
 }
