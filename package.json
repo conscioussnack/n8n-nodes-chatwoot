@@ -1,5 +1,5 @@
 {
-  "name": "@devlikeapro/n8n-nodes-chatwoot",
+  "name": "@conscioussnack/n8n-nodes-chatwoot",
   "version": "1.0.2",
   "description": "n8n node to connect with ChatWoot",
   "keywords": [
